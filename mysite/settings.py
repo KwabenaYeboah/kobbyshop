@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     #local apps
     'products',
     'cart',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -127,4 +128,5 @@ STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 
+# Cart session key
 CART_SESSION_ID = 'cart'
