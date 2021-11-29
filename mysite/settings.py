@@ -130,3 +130,20 @@ MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 
 # Cart session key
 CART_SESSION_ID = 'cart'
+
+#Email Configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'kwabena4140@gmail.com'
+EMAIL_HOST_PASSWORD = 'gnyxvafjrqkxbtkg' #This password has been changed so don't bother
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+SITE_ID = 1
+
+# Config for flower to work
+import asyncio
+import sys
+
+if sys.platform == 'win32':
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
