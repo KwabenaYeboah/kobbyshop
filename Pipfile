@@ -10,6 +10,7 @@ eventlet = "*"
 celery = "==4.4.2"
 gevent = "==20.4.0"
 flower = "==0.9.3"
+braintree = "==3.59.0"
 
 [dev-packages]
 

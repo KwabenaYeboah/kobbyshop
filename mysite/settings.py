@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'orders',
+    'payments',
 ]
 
 MIDDLEWARE = [
@@ -141,9 +142,17 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 SITE_ID = 1
 
-# Config for flower to work
+# Configs for flower package to work
 import asyncio
 import sys
-
 if sys.platform == 'win32':
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
+# Braintree Configs
+BRAINTREE_MERCHANT_ID = ''
+BRAINTREE_PUBLIC_KEY = ''
+BRAINTREE_PRIVATE_KEY = ''
+
+import braintree
+BRAINTREE_CONF = braintree.Configuration(braintree.Environment.Sandbox,
+                                         BRAINTREE_MERCHANT_ID, BRAINTREE_PUBLIC_KEY, BRAINTREE_PRIVATE_KEY)
