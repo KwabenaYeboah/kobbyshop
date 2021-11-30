@@ -1,7 +1,7 @@
 from django.db import models
 from products.models import Product
 
-class Customer(models.Model):
+class Order(models.Model):
     first_name = models.CharField(max_length=150)
     last_name = models.CharField(max_length=150)
     email = models.EmailField()
@@ -23,7 +23,7 @@ class Customer(models.Model):
         return sum(item.get_cost() for item in self.items.all())
     
 class OrderItem(models.Model):
-    customer = models.ForeignKey(Customer, related_name='items', 
+    order = models.ForeignKey(Order, related_name='items', 
                               on_delete=models.CASCADE)
     product = models.ForeignKey(Product, related_name='order_items',
                                 on_delete=models.CASCADE)

@@ -3,7 +3,7 @@ import datetime
 from django.http import HttpResponse
 from django.contrib import admin
 
-from .models import Customer, OrderItem
+from .models import Order, OrderItem
 
 class OrderItemInline(admin.TabularInline):
     model = OrderItem
@@ -33,7 +33,7 @@ def export_to_csv(modeladmin, request, queryset):
     return response
 export_to_csv.short_description = 'Export to CSV'    
 
-@admin.register(Customer)
+@admin.register(Order)
 class CustomerAdmin(admin.ModelAdmin):
     list_display = ['id', 'first_name', 'last_name', 'email', 'address',
                      'postal_code', 'city', 'paid', 'created', 'updated']

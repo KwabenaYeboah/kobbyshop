@@ -13,7 +13,7 @@ def create_order_view(request):
         if form.is_valid():
             order = form.save()
             for item in cart:
-                OrderItem.objects.create(customer=order, product=item['product'],
+                OrderItem.objects.create(order=order, product=item['product'],
                                          price=item['price'], quantity=item['quantity'])
             cart.clear()
             # Launch asynchronous task 
