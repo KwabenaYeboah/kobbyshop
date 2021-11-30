@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # Local context_processor
                 'cart.context_processors.cart',
             ],
         },
@@ -149,9 +150,9 @@ if sys.platform == 'win32':
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 # Braintree Configs
-BRAINTREE_MERCHANT_ID = ''
-BRAINTREE_PUBLIC_KEY = ''
-BRAINTREE_PRIVATE_KEY = ''
+BRAINTREE_MERCHANT_ID = '#'
+BRAINTREE_PUBLIC_KEY = '#'
+BRAINTREE_PRIVATE_KEY = '#'
 
 import braintree
 BRAINTREE_CONF = braintree.Configuration(braintree.Environment.Sandbox,
