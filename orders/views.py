@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect, get_list_or_404
+from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import reverse
 
-from .models import OrderItem
+from .models import OrderItem, Order 
 from .forms import CustomerOrderForm
 from cart.cart import Cart
 from .tasks import created_order
@@ -24,3 +25,8 @@ def create_order_view(request):
             return redirect(reverse('payment_process'))
     form = CustomerOrderForm()
     return render(request, 'order.html', {'cart':cart, 'form':form})
+
+@staff_member_required
+def order_detail_view(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    return render(request, 'admin/order_detail.html', {'order':order})
