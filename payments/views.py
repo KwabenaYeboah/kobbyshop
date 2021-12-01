@@ -43,4 +43,4 @@ def payment_done_view(request):
     return render(request, 'payments/payment_done.html')
 
 def payment_cancelled_view(request):
-    return render(request, 'payments/cancelled.html')
+    return render(request, 'payments/payment_cancelled.html')

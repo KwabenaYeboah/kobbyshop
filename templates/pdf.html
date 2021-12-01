@@ -30,14 +30,19 @@
       {% for item in order.items.all %}
         <tr class="row{% cycle "1" "2" %}">
           <td>{{ item.product.name }}</td>
-          <td class="num">${{ item.price }}</td>
+          <td class="num">₵{{ item.price }}</td>
           <td class="num">{{ item.quantity }}</td>
-          <td class="num">${{ item.get_cost }}</td>
+          <td class="num">₵{{ item.get_cost }}</td>
         </tr>
       {% endfor %}
       <tr class="total">
+        <td colspan="3">Coupon Code: {{ order.coupon.code }}
+          ({{ order.coupon.discount }}% off)</td>
+        <td class="num">-₵{{ order.get_coupon_cost }}</td>
+      </tr>
+      <tr class="total">
         <td colspan="3">Total</td>
-        <td class="num">${{ order.get_total_cost }}</td>
+        <td class="num">₵{{ order.get_total_cost }}</td>
       </tr>
     </tbody>
   </table>

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'cart',
     'orders',
     'payments',
+    'coupons',
 ]
 
 MIDDLEWARE = [
@@ -149,6 +150,7 @@ import asyncio
 import sys
 if sys.platform == 'win32':
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    # celery -A mysite worker -l info --pool=solo ===>for executing celery on the command line
 
 # Braintree Configs
 BRAINTREE_MERCHANT_ID = '#'
