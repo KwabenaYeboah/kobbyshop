@@ -8,14 +8,14 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import reverse
 
 from .models import OrderItem, Order 
-from .forms import CustomerOrderForm
+from .forms import OrderForm
 from cart.cart import Cart
 from .tasks import created_order
 
 def create_order_view(request):
     cart = Cart(request)
     if request.method == 'POST':
-        form = CustomerOrderForm(request.POST)
+        form = OrderForm(request.POST)
         if form.is_valid():
             order = form.save(commit=False)
             if cart.coupon:
@@ -32,7 +32,7 @@ def create_order_view(request):
             request.session['order_id'] = order.id
             #redirect user for payment
             return redirect(reverse('payment_process'))
-    form = CustomerOrderForm()
+    form = OrderForm()
     return render(request, 'order.html', {'cart':cart, 'form':form})
 
 @staff_member_required

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
@@ -43,11 +44,16 @@ INSTALLED_APPS = [
     'orders',
     'payments',
     'coupons',
+    #Third party appps
+    'rosetta',
+    'parler',
+    
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -110,8 +116,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
+LANGUAGES = (
+    ('en', _('English')),('es', _('Spanish')),
+)
+LOCAL_PATHS = (str(BASE_DIR.joinpath('locale/')),)
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'Africa/Accra'
 
@@ -160,3 +169,15 @@ BRAINTREE_PRIVATE_KEY = '#'
 import braintree
 BRAINTREE_CONF = braintree.Configuration(braintree.Environment.Sandbox,
                                          BRAINTREE_MERCHANT_ID, BRAINTREE_PUBLIC_KEY, BRAINTREE_PRIVATE_KEY)
+
+# Parler Config
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'es'},
+    ),
+    'default': {
+        'fallback': 'en',
+        'hide_untranslated': False,
+    }
+}

@@ -12,6 +12,8 @@ gevent = "==20.4.0"
 flower = "==0.9.3"
 braintree = "==3.59.0"
 weasyprint = "==51"
+django-rosetta = "==0.9.3"
+django-parler = "*"
 
 [dev-packages]
 

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e0e3369cbddd5fe3cdeffc97964c6c1cdd4ca374b4120742afb70d89df67df14"
+            "sha256": "1b37ce7824af67cd9c7c7f23793e0b51a834cd66d43490dfdf05e89a98eaf8eb"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -173,6 +173,22 @@
             "index": "pypi",
             "version": "==3.1.0"
         },
+        "django-parler": {
+            "hashes": [
+                "sha256:2c8f5012ceb5e49af93b16ea3fe4d0c83d70b91b2d0f470c05d7d742b6f3083d",
+                "sha256:8f6c8061e4b5690f1ee2d8e5760940ef06bf78a5bfa033d11178377559c749cf"
+            ],
+            "index": "pypi",
+            "version": "==2.3"
+        },
+        "django-rosetta": {
+            "hashes": [
+                "sha256:64b800ee505319dd046b08dd3842c9d3d7f1b1c1ef6ec1f2d06e37abcde1e8b9",
+                "sha256:bbfb9519fd5dc7c53fade5d51651dd13f5acb9545df791782cd3bb09db009ac6"
+            ],
+            "index": "pypi",
+            "version": "==0.9.3"
+        },
         "dnspython": {
             "hashes": [
                 "sha256:95d12f6ef0317118d2a1a6fc49aac65ffec7eb8087474158f42f26a639135216",
@@ -333,6 +349,13 @@
             ],
             "index": "pypi",
             "version": "==7.0.0"
+        },
+        "polib": {
+            "hashes": [
+                "sha256:d3ee85e0c6788f789353416b1612c6c92d75fe6ccfac0029711974d6abd0f86d",
+                "sha256:e02c355ae5e054912e3b0d16febc56510eff7e49d60bf22aecb463bd2f2a2dfa"
+            ],
+            "version": "==1.1.1"
         },
         "pycparser": {
             "hashes": [
