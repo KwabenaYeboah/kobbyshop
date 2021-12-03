@@ -172,7 +172,7 @@ BRAINTREE_CONF = braintree.Configuration(braintree.Environment.Sandbox,
 
 # Parler Config
 PARLER_LANGUAGES = {
-    None: (
+    1: (
         {'code': 'en'},
         {'code': 'es'},
     ),
