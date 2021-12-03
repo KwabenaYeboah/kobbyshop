@@ -14,6 +14,7 @@ braintree = "==3.59.0"
 weasyprint = "==51"
 django-rosetta = "==0.9.3"
 django-parler = "==2.3"
+redis = "==3.4.1"
 
 [dev-packages]
 

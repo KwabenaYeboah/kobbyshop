@@ -6,13 +6,14 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.admin.views.decorators import staff_member_required
 from django.urls import reverse
-
+from products.recommendations import Recommend
 from .models import OrderItem, Order 
 from .forms import OrderForm
 from cart.cart import Cart
 from .tasks import created_order
 
 def create_order_view(request):
+    conn = Recommend()
     cart = Cart(request)
     if request.method == 'POST':
         form = OrderForm(request.POST)
@@ -25,6 +26,12 @@ def create_order_view(request):
             for item in cart:
                 OrderItem.objects.create(order=order, product=item['product'],
                                          price=item['price'], quantity=item['quantity'])
+            
+            # Add product(s) to recommendation system
+            products = [item.product for item in order.items.all()] 
+            conn.products_bought(products)
+            
+            #clear the cart
             cart.clear()
             # Launch asynchronous task 
             created_order.delay(order.id)

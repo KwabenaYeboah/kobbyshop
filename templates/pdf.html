@@ -35,11 +35,13 @@
           <td class="num">₵{{ item.get_cost }}</td>
         </tr>
       {% endfor %}
-      <tr class="total">
-        <td colspan="3">Coupon Code: {{ order.coupon.code }}
-          ({{ order.coupon.discount }}% off)</td>
-        <td class="num">-₵{{ order.get_coupon_cost }}</td>
-      </tr>
+      {% if order.coupon %}
+        <tr class="total">
+          <td colspan="3">Coupon Code: {{ order.coupon.code }}
+            ({{ order.coupon.discount }}% off)</td>
+          <td class="num">-₵{{ order.get_coupon_cost }}</td>
+        </tr>
+      {% endif %}
       <tr class="total">
         <td colspan="3">Total</td>
         <td class="num">₵{{ order.get_total_cost }}</td>

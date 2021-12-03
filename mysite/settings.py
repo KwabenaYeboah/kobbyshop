@@ -181,3 +181,8 @@ PARLER_LANGUAGES = {
         'hide_untranslated': False,
     }
 }
+
+#Redis Config
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 1
