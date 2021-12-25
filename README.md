@@ -9,14 +9,15 @@ A fully featured e-commerce application powered by Django.
     <li><a href="tech">Technology</a></li>
     <li><a href="#setup">Setup</a></li>
     <li><a href="#image">Screenshots</a></li>
-    <li><a href="#status">Status</a></li>
+    <li><a href="#status">Project Status</a></li>
     <li><a href="#contribute">Contributing</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact">Author</a></li>
+    <li><a href="#licence">Licence</a></li>
    </ul>
 </p>
 
 <h2 id="desc">Project Description</h2>
-<p> This project is a fully featured django ecommerce application with some key functionalities in a modern day<br>
+<p> This project is a fully featured django ecommerce application with some key functionalities in a modern day
 ecommerce platform.
 </p>
 
@@ -32,7 +33,7 @@ ecommerce platform.
 <ul>
   <li>Python</li>
   <li>Django</li>
-  <li>HTML5/li>
+  <li>HTML5</li>
   <li>CSS</li>
   <li>Docker</li>
   <li>Celery</li>
@@ -50,7 +51,7 @@ To run the application, please follow guidlines below
   <li>You have Docker installed on your Machine</li>
   <li>A Text Editor or IDE(eg.Vscode, Sublime, Pycharm)</li>
 </ul></p>
-<p>2. Install python 3 and Pipenv</p>
+<p>2. Install python3 and Pipenv</p>
 
 <p>3. Now you setup as indicated below:</p>
 
