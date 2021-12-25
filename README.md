@@ -130,3 +130,7 @@ Pull requests and stars are always welcome
 <h2 id="contact">Author</h2>
 
 [KwabenaYeboah](https://github.com/KwabenaYeboah/)
+
+<h2 id="licence">Licence</h2>
+
+  **MIT** Licence
