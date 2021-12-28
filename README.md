@@ -67,11 +67,11 @@ To run the application, please follow guidlines below
   (kobbyshop-xxx) $ docker-compose exec web python manage.py migrate
   
   # Create superuser account
-  (Final-Senior-Year-Project-XXXX) $ docker-compose exec web python manage.py createsuperuser
+  (kobbyshop-xxx) $ docker-compose exec web python manage.py createsuperuser
   # start server
-  (Final-Senior-Year-Project-XXXX) $ docker-compose exec web python manage.py runserver
+  (kobbyshop-xxx) $ docker-compose exec web python manage.py runserver
   
-  # Copy the IP address provided once your server has completed building the site. (It will say something like >> Serving at 127.0.0.1....).
+  # Copy the IP address provided once your server is up and running. (you will something like >> Serving at 127.0.0.1....).
   
   # Open the address in the browser
   >>> http://127.0.0.1:XXXX/products/
