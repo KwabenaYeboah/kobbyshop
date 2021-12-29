@@ -55,30 +55,27 @@ To run the application, please follow guidlines below
 
 <p>3. Now you setup as indicated below:</p>
 
-
  ```
   # Clone this repository into the directory of your choice
   $ git clone https://github.com/KwabenaYeboah/kobbyshop.git
+  
   # Move into project folder
   $ cd kobbyshop
-  # Build the image and run the container
-  $ docker-compose up --build
+  
+  # Build the image and run the container(This will also start the server)
+  $ docker-compose up -d --build
+  
   # Migrate database models
-  (kobbyshop-xxx) $ docker-compose exec web python manage.py migrate
+  $ docker-compose exec web python manage.py migrate
   
   # Create superuser account
-  (kobbyshop-xxx) $ docker-compose exec web python manage.py createsuperuser
-  # start server
-  (kobbyshop-xxx) $ docker-compose exec web python manage.py runserver
-  
-  # Copy the IP address provided once your server is up and running. (you will something like >> Serving at 127.0.0.1....).
+  $ docker-compose exec web python manage.py createsuperuser
   
   # Open the address in the browser
-  >>> http://127.0.0.1:XXXX/products/
-  
+  >>> http://127.0.0.1:8000/products/
   
   # Django Admin
-  >>> http://127.0.0.1:XXXX/admin/
+  >>> http://127.0.0.1:8000/admin/
   ```
   
   <h2 id="image">Screenshots</h2>
