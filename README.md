@@ -6,7 +6,7 @@ A fully featured e-commerce application powered by Django.
   <ul>
     <li><a href="#desc">Project Description</a></li>
     <li><a href="#feat">Features</a></li>
-    <li><a href="tech">Technology</a></li>
+    <li><a href="#tech">Technology</a></li>
     <li><a href="#setup">Setup</a></li>
     <li><a href="#image">Screenshots</a></li>
     <li><a href="#status">Project Status</a></li>
