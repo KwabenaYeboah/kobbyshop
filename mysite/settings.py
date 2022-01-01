@@ -150,8 +150,8 @@ CART_SESSION_ID = 'cart'
 
 #Email Configuration
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'kwabena4140@gmail.com'
-EMAIL_HOST_PASSWORD = 'gnyxvafjrqkxbtkg' #This password has been changed so don't bother
+EMAIL_HOST_USER = '#'
+EMAIL_HOST_PASSWORD = '#' #This password has been changed so don't bother
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
